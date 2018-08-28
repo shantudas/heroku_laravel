@@ -13,27 +13,35 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                            <table class="table">
-                                <thead class="thead-light">
+                        <table class="table">
+                            <thead class="thead-light">
+                            <tr>
+                                <th> id</th>
+                                <th> name</th>
+                                <th> email</th>
+                                <th> role</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($users as $user)
                                 <tr>
-                                    <th> id</th>
-                                    <th> name</th>
-                                    <th> email </th>
+                                    <td> {{$user->id}} </td>
+                                    <td> {{$user->name}} </td>
+                                    <td> {{$user->email}} </td>
+                                    @if($user->user_type == 1)
+                                        <td>admin</td>
+                                    @elseif($user->user_type ==2)
+                                        <td>super admin</td>
+                                    @else
+                                        <td>user</td>
+                                    @endif
                                 </tr>
-                                </thead>
-                                <tbody>
-                                @foreach($users as $user)
-                                    <tr>
-                                        <td> {{$user->id}} </td>
-                                        <td> {{$user->name}} </td>
-                                        <td> {{$user->email}} </td>
-                                    </tr>
-                                @endforeach
-                                </tbody>
-                            </table>
-                           {{-- @foreach($users as $index=>$user)
-                                {{ $index+1 }}
-                            @endforeach--}}
+                            @endforeach
+                            </tbody>
+                        </table>
+                        {{-- @foreach($users as $index=>$user)
+                             {{ $index+1 }}
+                         @endforeach--}}
                     </div>
                 </div>
             </div>

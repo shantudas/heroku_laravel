@@ -1,18 +1,17 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
-use App\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\User;
 
 class UserController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('auth');
     }
-
     /**
      * Display a listing of the resource.
      *
@@ -23,7 +22,6 @@ class UserController extends Controller
         $users=User::all();
         return view('users/user')->with('users', $users);
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -33,7 +31,6 @@ class UserController extends Controller
     {
         //
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -44,7 +41,6 @@ class UserController extends Controller
     {
         //
     }
-
     /**
      * Display the specified resource.
      *
@@ -55,7 +51,6 @@ class UserController extends Controller
     {
         return User::find($id);
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -66,7 +61,6 @@ class UserController extends Controller
     {
         //
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -78,7 +72,6 @@ class UserController extends Controller
     {
         //
     }
-
     /**
      * Remove the specified resource from storage.
      *
