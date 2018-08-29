@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Users</div>
+                    <div class="card-header">Companies</div>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -18,34 +18,26 @@
                             <tr>
                                 <th> id</th>
                                 <th> name</th>
-                                <th> email</th>
-                                <th> role</th>
-                                <th> status</th>
+                                <th> address</th>
+                                <th> phone</th>
+                                <th> Action</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($users as $user)
+                            @foreach($companies as $company)
                                 <tr>
-                                    <td> {{$user->id}} </td>
-                                    <td> {{$user->name}} </td>
-                                    <td> {{$user->email}} </td>
-                                    @if($user->role == 1)
-                                        <td>admin</td>
-                                    @elseif($user->role ==2)
-                                        <td>super admin</td>
-                                    @else
-                                        <td>user</td>
-                                    @endif
-
-                                    @if($user->status == 0)
-                                        <td>Inactive</td>
-                                    @else
-                                        <td>Active</td>
-                                    @endif
+                                    <td> {{$company->id}} </td>
+                                    <td> {{$company->name}} </td>
+                                    <td> {{$company->address}} </td>
+                                    <td> {{$company->phone}} </td>
+                                    <td>
+                                        <a href="{{ route('companies.edit', $company->id) }}" class="btn btn-primary">Edit</a>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
+                            {{ $companies->links() }}
                     </div>
                 </div>
             </div>
