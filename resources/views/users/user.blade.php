@@ -20,6 +20,7 @@
                                 <th> name</th>
                                 <th> email</th>
                                 <th> role</th>
+                                <th> status</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -34,6 +35,12 @@
                                         <td>super admin</td>
                                     @else
                                         <td>user</td>
+                                    @endif
+
+                                    @if($user->status == 0)
+                                        <td>Inactive</td>
+                                    @else
+                                        <td>Active</td>
                                     @endif
                                 </tr>
                             @endforeach
