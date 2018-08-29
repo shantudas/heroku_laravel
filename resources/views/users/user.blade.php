@@ -28,9 +28,9 @@
                                     <td> {{$user->id}} </td>
                                     <td> {{$user->name}} </td>
                                     <td> {{$user->email}} </td>
-                                    @if($user->user_type == 1)
+                                    @if($user->role == 1)
                                         <td>admin</td>
-                                    @elseif($user->user_type ==2)
+                                    @elseif($user->role ==2)
                                         <td>super admin</td>
                                     @else
                                         <td>user</td>
