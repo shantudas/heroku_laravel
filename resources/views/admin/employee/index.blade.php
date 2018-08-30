@@ -24,20 +24,20 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($companies as $company)
+                            @foreach($employees as $employee)
                                 <tr>
-                                    <td> {{$company->id}} </td>
-                                    <td> {{$company->name}} </td>
-                                    <td> {{$company->address}} </td>
-                                    <td> {{$company->phone}} </td>
+                                    <td> {{$employee->id}} </td>
+                                    <td> {{$employee->name}} </td>
+                                    <td> {{$employee->address}} </td>
+                                    <td> {{$employee->phone}} </td>
                                     <td>
-                                        <a href="{{ route('admin.companies.edit', $company->id) }}" class="btn btn-primary">Edit</a>
+                                        <a href="{{ route('admin.employees.edit', $employee->id) }}" class="btn btn-primary">Edit</a>
                                     </td>
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
-                            {{ $companies->links() }}
+                        {{ $employees->links() }}
                     </div>
                 </div>
             </div>

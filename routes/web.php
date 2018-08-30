@@ -21,8 +21,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['admin']], function () {
     Route::resource('/users', 'admin\UserController');
-    Route::get('/companies', 'admin\CompanyController@index');
-    Route::get('/companies/edit/{id}', 'admin\CompanyController@edit')->name('companies.edit');;
+    Route::get('/admin/companies', 'admin\CompanyController@index');
+    Route::get('/admin/companies/edit/{id}', 'admin\CompanyController@edit')->name('admin.companies.edit');
+    //employee routes
+    Route::get('/admin/employees', 'admin\EmployeeController@index');
+    Route::get('/admin/employees/edit/{id}', 'admin\EmployeeController@edit')->name('admin.employees.edit');
 });
 
 
