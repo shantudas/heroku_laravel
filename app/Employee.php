@@ -13,6 +13,6 @@ class Employee extends Model
      */
     public function designation()
     {
-        return $this->hasOne('App\Designation');
+        return $this->hasOne(Designation::class);
     }
 }
