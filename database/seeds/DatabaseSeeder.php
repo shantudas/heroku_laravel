@@ -15,7 +15,6 @@ class DatabaseSeeder extends Seeder
             [
                 UsersTableSeeder::class,
                 CompaniesTableSeeder::class,
-                DesignationsTableSeeder::class,
                 EmployeesTableSeeder::class
             ]
         );

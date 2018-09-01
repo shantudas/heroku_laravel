@@ -25,6 +25,7 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/admin/companies/edit/{id}', 'admin\CompanyController@edit')->name('admin.companies.edit');
     //employee routes
     Route::get('/admin/employees', 'admin\EmployeeController@index');
+    Route::get('/admin/employees/details/{id}', 'admin\EmployeeController@show')->name('admin.employees.details');
     Route::get('/admin/employees/edit/{id}', 'admin\EmployeeController@edit')->name('admin.employees.edit');
 });
 

@@ -15,9 +15,8 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $employees = Employee::all()->designation_id;
-        return $employees;
-//        return view('admin/employee/index')->with('employees', $employees);
+        $employees = Employee::paginate(10);
+        return view('admin/employee/index')->with('employees', $employees);
     }
 
     /**

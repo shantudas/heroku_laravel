@@ -18,8 +18,7 @@ class CreateEmployees extends Migration
             $table->string('name');
             $table->string('address');
             $table->string('phone');
-            $table->integer('designation_id')->unsigned();
-            $table->foreign('designation_id')->references('id')->on('designations');
+            $table->integer('designation')->unsigned()->comments('1=>finance,2=>sales');
             $table->timestamps();
         });
     }

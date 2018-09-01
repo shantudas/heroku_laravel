@@ -18,8 +18,8 @@
                             <tr>
                                 <th> id</th>
                                 <th> name</th>
-                                <th> address</th>
                                 <th> phone</th>
+                                <th> Designation</th>
                                 <th> Action</th>
                             </tr>
                             </thead>
@@ -28,10 +28,17 @@
                                 <tr>
                                     <td> {{$employee->id}} </td>
                                     <td> {{$employee->name}} </td>
-                                    <td> {{$employee->address}} </td>
                                     <td> {{$employee->phone}} </td>
+                                    @if ($employee->designation==1)
+                                        <td>Finance</td>
+                                    @elseif($employee->designation==2)
+                                        <td>Finance</td>
+                                    @else
+                                        <td>not found</td>
+                                    @endif
                                     <td>
-                                        <a href="{{ route('admin.employees.edit', $employee->id) }}" class="btn btn-primary">Edit</a>
+                                        <a href="{{ route('admin.employees.edit', $employee->id) }}" class="btn btn-outline-info">Edit</a>
+                                        <a href="{{ route('admin.employees.details', $employee->id) }}" class="btn btn-primary">Details</a>
                                     </td>
                                 </tr>
                             @endforeach
