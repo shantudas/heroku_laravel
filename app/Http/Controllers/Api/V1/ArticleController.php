@@ -9,8 +9,8 @@ use App\Http\Controllers\Controller;
 
 class ArticleController extends Controller
 {
-    public function index(){
-        return ArticleResource::collection(Article::paginate(5));
+    public function index(Article $article){
+        return ArticleResource::collection($article->with('comments')->paginate(10));
     }
 
 
