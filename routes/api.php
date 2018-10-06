@@ -18,6 +18,7 @@ use Illuminate\Http\Request;
 
 Route::group(['prefix' => '/v1', 'namespace' => 'Api\V1', 'as' => 'api.'], function () {
     Route::resource('users', 'UsersController');
+    Route::get('article/{id}', 'BlogsController@show');
 });
 
 
