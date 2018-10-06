@@ -9,6 +9,11 @@ use App\Http\Controllers\Controller;
 
 class ArticleController extends Controller
 {
+    public function index(){
+        return ArticleResource::collection(Article::paginate(5));
+    }
+
+
     public function show ($id)
     {
         return new ArticleResource(Article::find($id));
