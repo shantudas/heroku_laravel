@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-
-use App\Blog;
-use App\Http\Resources\BlogResource;
+use App\Article;
+use App\Http\Resources\ArticleResource;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class BlogsController extends Controller
+class ArticleController extends Controller
 {
     public function show ($id)
     {
-        return new BlogResource(Blog::find($id));
+        return new ArticleResource(Article::find($id));
     }
 }
