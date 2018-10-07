@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
                 CompaniesTableSeeder::class,
                 EmployeesTableSeeder::class,
                 ArticleSeeder::class,
-                CommentsTableSeder::class
+                CommentsTableSeder::class,
+                RatingTableSeeder::class
             ]
         );
     }
