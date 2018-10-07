@@ -48,7 +48,7 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        return User::findOrFail($id);
+        return User::with("articles")->get();
     }
 
     /**

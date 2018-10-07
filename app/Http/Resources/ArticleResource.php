@@ -14,15 +14,16 @@ class ArticleResource extends JsonResource
      */
     public function toArray($request)
     {
-        dd($request);
 //        return parent::toArray($request);
-        /*return [
+        return [
             'id' => $this->id,
             'title' => $this->title,
             'body' => $this->body,
             'posted_at' => (string)$this->created_at,
-            'posted_by' => $this->user->name,
-            'comments' => CommentsResource::collection($this->whenLoaded('comments'))
-        ];*/
+            'posted_by' =>$this->user->name,
+//            'comments'=>$this->comments,
+            'comments'=> CommentsResource::collection($this->whenLoaded('comments')),
+
+        ];
     }
 }

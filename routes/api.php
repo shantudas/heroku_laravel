@@ -19,7 +19,7 @@ use Illuminate\Http\Request;
 Route::group(['prefix' => '/v1', 'namespace' => 'Api\V1', 'as' => 'api.'], function () {
     Route::resource('users', 'UsersController');
     Route::get('articles', 'ArticleController@index');
-    Route::get('article/{id}', 'ArticleController@show');
+    Route::get('articles/{id}', 'ArticleController@show');
 
 });
 
