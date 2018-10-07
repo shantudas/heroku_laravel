@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api\V1;
 
+use App\Http\Resources\user\UserResource;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -13,10 +14,9 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(User $user)
     {
-        $users = User::all();
-        return $users;
+        return UserResource::collection($user->with('articles')->paginate(10));
     }
 
     /**
@@ -48,7 +48,7 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        return User::with("articles")->get();
+        return new UserResource(User::find($id));
     }
 
     /**
