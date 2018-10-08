@@ -24,7 +24,7 @@ class ArticleResource extends JsonResource
             'posted_by' => $this->user->name,
             'comments' => CommentsResource::collection($this->comments),
             'avg_rating' => $this->ratings->avg('rating'),
-            'rating_info'=>ArticleWithRatingResource::collection($this->ratings),
+            'rating_info' => ArticleWithRatingResource::collection($this->ratings),
         ];
     }
 }
